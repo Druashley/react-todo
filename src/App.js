@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ProjectList from "./components/ProjectList";
+import React, { useState } from "react";
 
 function App() {
+  const [projectList, setProjectList] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="text-3xl">Todo App</div>
+      <div className="grid grid-rows-3 grid-flow-col gap-4">
+        <div className="row-span-3 ...">
+          <ProjectList
+            projectList={projectList}
+            setProjectList={setProjectList}
+          />
+        </div>
+        <div className="col-span-2 ...">Project Name</div>
+        <div className="row-span-2 col-span-2 ...">Each Project</div>
+      </div>
     </div>
   );
 }
